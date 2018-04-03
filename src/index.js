@@ -4,7 +4,7 @@
 
 import React, { Timeout } from "react";
 import { unstable_deferredUpdates as deferredUpdates } from "react-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 //https://github.com/rollup/rollup/wiki/Troubleshooting#name-is-not-exported-by-module
 // cant do named importing because SCP is written in cjs...
 import SCP from "simple-cache-provider";

@@ -1,8 +1,8 @@
 import React, { Component, unstable_AsyncMode as AsyncMode } from "react";
 
 import { createFetcher, Placeholder } from "async-react-future";
-import { fetchMovieReviews } from "./api";
 import "./Spinner.css";
+import { fetchMovieReviews } from "./api";
 const movieReviewsFetcher = createFetcher(fetchMovieReviews);
 
 function MovieReviews({ movieId }) {

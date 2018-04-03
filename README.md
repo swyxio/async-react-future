@@ -7,6 +7,12 @@ This library helps experimentation as explored in talks by @swyx:
 * https://slides.com/swyx/react-suspense
 * https://slides.com/swyx/background-thread
 
+If you want further hints on how to use this library, check these articles:
+
+* https://dev.to/swyx/how-to-try-react-suspense-in-5-minutes-474c
+
+and watch this repo: https://github.com/sw-yx/fresh-async-react
+
 [![NPM](https://img.shields.io/npm/v/async-react-future.svg)](https://www.npmjs.com/package/async-react-future) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
