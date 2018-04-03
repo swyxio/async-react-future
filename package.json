@@ -20,8 +20,8 @@
   "dependencies": {},
   "peerDependencies": {
     "prop-types": "^15.5.4",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.0-alpha.0911da3",
+    "react-dom": "^16.4.0-alpha.0911da3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -31,8 +31,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "gh-pages": "^1.1.0",
-    "react": "^16.4.0-alpha.0911da3",
-    "react-dom": "^16.4.0-alpha.0911da3",
     "react-scripts": "^1.1.1",
     "rollup": "^0.54.0",
     "rollup-plugin-babel": "^3.0.3",
