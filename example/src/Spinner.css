@@ -1,0 +1,20 @@
+.Spinner {
+  border-top: 5px solid blue;
+  border-right: 5px solid green;
+  border-bottom: 5px solid red;
+  border-left: 5px solid pink;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spinner_spin 0.3s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spinner_spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
