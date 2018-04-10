@@ -10,7 +10,7 @@ import { unstable_deferredUpdates as deferredUpdates } from "react-dom";
 // cant do named importing because SCP is written in cjs...
 // import SCP from "simple-cache-provider";
 // const { createResource, createCache } = SCP;
-export { createResource, createCache, load, clear, clearAll } from "./cache";
+import { createResource, createCache, load, clear, clearAll } from "./cache";
 
 const cache = createCache(() => {});
 
