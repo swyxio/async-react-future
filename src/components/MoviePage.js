@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { Spinner } from './Spinner';
+import styled from 'styled-components';
 
 // async agnostic
 export const MoviePageComponent = ({ id, MovieDetails, MovieReviews }) => (
@@ -25,11 +26,16 @@ export const MovieDetailsComponent = ({ movie, MoviePoster, MovieMetrics }) => (
   </div>
 );
 
+const StyledMoviePoster = styled.div`
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+`;
 // show me how to display images, can just give me an <img> if dont want async
 export const MoviePosterComponent = ({ src, Img }) => (
-  <div className="MoviePoster">
+  <StyledMoviePoster>
     <Img src={src} alt="poster" />
-  </div>
+  </StyledMoviePoster>
 );
 
 // pure functional!
@@ -48,8 +54,26 @@ export const MovieMetrics = movie => (
 );
 export const MovieMetricsComponent = MovieMetrics; // just an alias
 
+const StyledMovieReviews = styled.div`
+  clear: left;
+  display: flex;
+  justify-content: center;
+  .review {
+    background-color: #282828;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .review .author {
+    margin-top: 1rem;
+    color: #888;
+  }
+`;
 export const MovieReviewsComponent = ({ reviews }) => (
-  <div className="MovieReviews">
+  <StyledMovieReviews>
     {reviews &&
       reviews.map((review, index) => (
         <div className="review" key={index}>
@@ -57,7 +81,7 @@ export const MovieReviewsComponent = ({ reviews }) => (
           <div className="author">{review.author}</div>
         </div>
       ))}
-  </div>
+  </StyledMovieReviews>
 );
 
 /// the stuff that isnt meant to be exported

@@ -1,6 +1,6 @@
 export * from './api';
 export * from './future';
-import './components/index.css';
-export * from './Spinner.js';
-export * from './MoviePage.js';
-export * from './MovieListPage.js';
+// export * from './components/Spinner.js';
+// export * from './components/MoviePage.js';
+// export * from './components/MovieListPage.js';
+export * from './components';

@@ -31,33 +31,40 @@ export default [
         exclude: 'node_modules/**'
       }),
       resolve(),
-      commonjs()
-    ]
-  },
-  {
-    input: 'src/components/index.js',
-    output: [
-      {
-        file: pkg.componentdir.main,
-        format: 'cjs'
-      },
-      {
-        file: pkg.componentdir.module,
-        format: 'es'
-      }
-    ],
-    plugins: [
-      external(),
-      postcss({
-        modules: true
-      }),
-      url(),
-      babel({
-        runtimeHelpers: true,
-        exclude: 'node_modules/**'
-      }),
-      resolve(),
-      commonjs()
+      commonjs({
+        namedExports: {
+          // left-hand side can be an absolute path, a path
+          // relative to the current directory, or the name
+          // of a module in node_modules
+          'node_modules/react-is/index.js': ['isValidElementType']
+        }
+      })
     ]
   }
+  // {
+  //   input: 'src/components/index.js',
+  //   output: [
+  //     {
+  //       file: pkg.componentdir.main,
+  //       format: 'cjs'
+  //     },
+  //     {
+  //       file: pkg.componentdir.module,
+  //       format: 'es'
+  //     }
+  //   ],
+  //   plugins: [
+  //     external(),
+  //     postcss({
+  //       modules: true
+  //     }),
+  //     url(),
+  //     babel({
+  //       runtimeHelpers: true,
+  //       exclude: 'node_modules/**'
+  //     }),
+  //     resolve(),
+  //     commonjs()
+  //   ]
+  // }
 ];
