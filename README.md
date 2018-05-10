@@ -26,11 +26,11 @@ npm install --save async-react-future
 ## Usage
 
 ```jsx
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { createFetcher, Placeholder, Img, Delay } from "async-react-future";
+import { createFetcher, Placeholder, Img, Delay } from 'async-react-future';
 
-import { fetchMovieReviews } from "./api";
+import { fetchMovieReviews } from './api';
 const movieReviewsFetcher = createFetcher(fetchMovieReviews);
 
 function MovieReviews({ movieId }) {
@@ -71,8 +71,8 @@ export default class App extends Component {
 This library ships its own version of caches which you can import:
 
 ```js
-import { createResource, createCache } from "async-react-future"; // simple-cache-provider
-import { load, clear, clearAll } from "async-react-future"; // pomber/hitchcock
+import { createResource, createCache } from 'async-react-future'; // simple-cache-provider
+import { load, clear, clearAll } from 'async-react-future'; // pomber/hitchcock
 ```
 
 and a bunch of components:
@@ -92,6 +92,8 @@ I have studied a lot of people's code and you are likely to see shades of your c
 * https://github.com/BenoitZugmeyer/react-suspense-demo for much of the `./future` API
 * https://medium.com/@pete_gleeson/creating-suspense-in-react-16-2-dcf4cb1a683f for `Loading`
 * https://github.com/pomber/hitchcock/blob/master/src/cache.js for cache
+
+Library was bootstrapped with: https://github.com/transitive-bullshit/create-react-library
 
 ## License
 

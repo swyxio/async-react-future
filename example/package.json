@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "async-react-future": "link:..",
+    "hitchcock": "^0.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0-alpha.0911da3",
     "react-dom": "^16.4.0-alpha.0911da3",
