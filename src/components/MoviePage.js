@@ -1,38 +1,81 @@
-// // credit: https://codesandbox.io/s/kk2v1op3m5
+// i understand this file may be a bit confusing
+//
+// we want to export just some components that go with the css
+// aim is to be agnostic of loader
+// so we export the stuff that is agnostic of loader
+// but leave in some details of how things work with loader if you just want to build an example off of it
+// credit: https://codesandbox.io/s/kk2v1op3m5
 
 import React from 'react';
 import { Spinner } from './Spinner';
-// import { Loader } from 'hitchcock';
 
-const imageSource = {
-  getName: src => src,
-  getValue: src =>
-    new Promise(resolve => {
-      const image = new Image();
-      image.onload = () => resolve(src);
-      image.src = src;
-    })
-};
-
-export const MoviePage = ({ id }) => (
+// async agnostic
+export const MoviePageComponent = ({ id, MovieDetails, MovieReviews }) => (
   <div>
     <MovieDetails id={id} />
     <MovieReviews id={id} />
   </div>
 );
 
+export const MovieDetailsComponent = ({ movie, MoviePoster, MovieMetrics }) => (
+  <div className="MovieDetails">
+    <MoviePoster src={movie.poster} />
+    <h1>{movie.title}</h1>
+    <MovieMetrics {...movie} />
+  </div>
+);
+
+// show me how to display images, can just give me an <img> if dont want async
+export const MoviePosterComponent = ({ src, Img }) => (
+  <div className="MoviePoster">
+    <Img src={src} alt="poster" />
+  </div>
+);
+
+// pure functional!
+export const MovieMetrics = movie => (
+  <div>
+    <div>
+      <h3>Tomatometer</h3>
+      {movie.rating > 70 ? '🍅' : '🤢'}
+      {movie.rating}%
+    </div>
+    <div>
+      <h3>Critics Consensus</h3>
+      {movie.consensus}
+    </div>
+  </div>
+);
+export const MovieMetricsComponent = MovieMetrics; // just an alias
+
+export const MovieReviewsComponent = ({ reviews }) => (
+  <div className="MovieReviews">
+    {reviews &&
+      reviews.map((review, index) => (
+        <div className="review" key={index}>
+          <div className="summary">{review.summary}</div>
+          <div className="author">{review.author}</div>
+        </div>
+      ))}
+  </div>
+);
+
+/// the stuff that isnt meant to be exported
+
+// probably not helpful since the components probably need to be async
+const MoviePage = ({ id }) => <MoviePageComponent id={id} MovieDetails={MovieDetails} MovieReviews={MovieReviews} />;
+// basically kinda shows how to wrap in a hitchcock Loader; not meant for use
 const MovieDetails = ({ id, detailsSource, Loader }) => (
   <Loader source={detailsSource} params={id}>
     {movie => (
-      <div className="MovieDetails">
-        <MoviePoster src={movie.poster} />
-        <h1>{movie.title}</h1>
-        <MovieMetrics {...movie} />
-      </div>
+      <MovieDetailsComponent
+        movie={movie}
+        MoviePoster={MoviePoster} // from scope
+        MovieMetrics={MovieMetrics} // from scope
+      />
     )}
   </Loader>
 );
-
 const Img = props => {
   const { Loader, ...rest } = props;
   return (
@@ -47,32 +90,8 @@ const MoviePoster = ({ src }) => (
     <Img src={src} alt="poster" />
   </div>
 );
-
-const MovieMetrics = movie => (
-  <div>
-    <div>
-      <h3>Tomatometer</h3>
-      {movie.rating > 70 ? '🍅' : '🤢'}
-      {movie.rating}%
-    </div>
-    <div>
-      <h3>Critics Consensus</h3>
-      {movie.consensus}
-    </div>
-  </div>
-);
-
 const MovieReviews = ({ id, reviewsSource, Loader }) => (
-  <div className="MovieReviews">
-    <Loader source={reviewsSource} params={id} wait={100} fallback={<Spinner size="medium" />}>
-      {reviews =>
-        (reviews || []).map((review, index) => (
-          <div className="review" key={index}>
-            <div className="summary">{review.summary}</div>
-            <div className="author">{review.author}</div>
-          </div>
-        ))
-      }
-    </Loader>
-  </div>
+  <Loader source={reviewsSource} params={id} wait={100} fallback={<Spinner size="medium" />}>
+    {reviews => <MovieReviewsComponent reviews={reviews} />}
+  </Loader>
 );

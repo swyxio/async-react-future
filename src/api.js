@@ -1,5 +1,15 @@
 export const delay = duration => new Promise(resolve => setTimeout(resolve, duration));
 
+export const imageSource = {
+  getName: src => src,
+  getValue: src =>
+    new Promise(resolve => {
+      const image = new Image();
+      image.onload = () => resolve(src);
+      image.src = src;
+    })
+};
+
 export const detailsSource = {
   getName: id => `/movies/${id}/details`,
   getValue: id => fetchMovieDetails(id)
