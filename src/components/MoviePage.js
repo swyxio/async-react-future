@@ -18,7 +18,7 @@ export const MoviePageComponent = ({ id, MovieDetails, MovieReviews }) => (
   </div>
 );
 
-export const MovieDetailsComponent = ({ movie, MoviePoster, MovieMetrics }) => (
+export const MovieDetailsComponent = ({ movie, MoviePoster }) => (
   <div className="MovieDetails">
     <MoviePoster src={movie.poster} />
     <h1>{movie.title}</h1>

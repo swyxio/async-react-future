@@ -17,6 +17,10 @@ and watch this repo: https://github.com/sw-yx/fresh-async-react.
 
 [![NPM](https://img.shields.io/npm/v/async-react-future.svg)](https://www.npmjs.com/package/async-react-future) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## See it in action
+
+[![Edit async-react-future demo clone](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ryrk0o5xzm)
+
 ## Install
 
 ```bash
