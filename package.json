@@ -1,12 +1,16 @@
 {
   "name": "async-react-future",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "async react future",
   "author": "sw-yx",
   "license": "MIT",
   "repository": "sw-yx/async-react-future",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "componentdir": {
+    "main": "dist/components/index.js",
+    "module": "dist/components/index.es.js"
+  },
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "test": "CI=1 react-scripts test --env=jsdom",
