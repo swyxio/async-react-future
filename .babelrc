@@ -1,12 +1,13 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
     "stage-0",
     "react"
   ],
-  "plugins": [
-    "external-helpers"
-  ]
+  "plugins": ["transform-runtime", "transform-async-to-generator", "external-helpers"]
 }
