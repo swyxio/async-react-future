@@ -19,6 +19,14 @@ and watch this repo: https://github.com/sw-yx/fresh-async-react.
 
 ## See it in action
 
+### Simple movie demo clone - no Suspense, no react-loadable
+[![Edit async-react-future simple non suspense clone](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/0po13wpz6v)
+
+### Movie demo clone with react-loadable
+[![Edit async-react-future react-loadable non suspense clone](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/wn4w6ywqxw)
+
+### Full movie demo clone - with Suspense
+
 [![Edit async-react-future demo clone](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ryrk0o5xzm)
 
 ## Install
