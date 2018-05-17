@@ -4,7 +4,7 @@ export * from './future';
 export * from './movieDemo';
 
 // namespaced exports for future use
-import future from './future';
-import mockapi from './mockapi';
-import movieDemo from './movieDemo';
+const future = require('./future');
+const mockapi = require('./mockapi');
+const movieDemo = require('./movieDemo');
 export { future, mockapi, movieDemo };
