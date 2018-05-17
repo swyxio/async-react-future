@@ -1,7 +1,10 @@
+// this is a non flow typed rewrite of simple-cache-provider so that we can mess around with it in future
+// also good for teaching people who don't read flow
+//
 // adapted from
 // https://github.com/facebook/react/blob/master/packages/simple-cache-provider/src/SimpleCacheProvider.js
 
-import React from "react";
+import React from 'react';
 
 function noop() {}
 

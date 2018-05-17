@@ -1,0 +1,1 @@
+Note: these are extreme convenience components purely meant for helping people do movie demo clones. they come with their own styling and are pretty much plug and play. i may remove this in future if this ever becomes a production library where bloat matters

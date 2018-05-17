@@ -1,24 +1,22 @@
+/*
+ *  this is a mock api so you dont have to rely on network.
+ *
+ * the main functions to pay attention to are:
+ *  - fetchMovieList,
+ *  - fetchMovieDetails and
+ *  - fetchMovieReviews.
+ *
+ *  they are async functions that provide data as they are named.
+ *
+ * we also export the raw data as
+ *  - moviesOverview (array of movie objects)
+ *  - movieDetailsJSON (an object map of movie id: movie detail object)
+ *  - movieReviewsJSON (an object map of movie id: movie review object)
+ *
+ */
+
+// utility function for a promisified version of a noop setTimeout of a given duration.
 export const delay = duration => new Promise(resolve => setTimeout(resolve, duration));
-
-export const imageSource = {
-  getName: src => src,
-  getValue: src =>
-    new Promise(resolve => {
-      const image = new Image();
-      image.onload = () => resolve(src);
-      image.src = src;
-    })
-};
-
-export const detailsSource = {
-  getName: id => `/movies/${id}/details`,
-  getValue: id => fetchMovieDetails(id)
-};
-
-export const reviewsSource = {
-  getName: id => `/movies/${id}/reviews`,
-  getValue: id => fetchMovieReviews(id)
-};
 
 export const moviesOverview = [
   {
@@ -150,12 +148,17 @@ export const movieReviewsJSON = {
   ]
 };
 
-export const fetchMovieDetails = async id => {
-  await delay(100);
+export const fetchMovieList = async (delayMS = 1) => {
+  await delay(delayMS);
+  return moviesOverview;
+};
+
+export const fetchMovieDetails = async (id, delayMS = 100) => {
+  await delay(delayMS);
   return movieDetailsJSON[id];
 };
 
-export const fetchMovieReviews = async id => {
-  await delay(2000);
+export const fetchMovieReviews = async (id, delayMS = 2000) => {
+  await delay(delayMS);
   return movieReviewsJSON[id];
 };

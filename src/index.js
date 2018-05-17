@@ -1,6 +1,10 @@
-export * from './api';
+// general export for backwards compatibility
+export * from './mockapi';
 export * from './future';
-// export * from './components/Spinner.js';
-// export * from './components/MoviePage.js';
-// export * from './components/MovieListPage.js';
-export * from './components';
+export * from './movieDemo';
+
+// namespaced exports for future use
+import future from './future';
+import mockapi from './mockapi';
+import movieDemo from './movieDemo';
+export { future, mockapi, movieDemo };
